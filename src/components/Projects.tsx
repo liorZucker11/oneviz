@@ -126,6 +126,17 @@ type Project = ProjectData;
 type Category = 'הכל' | 'חוץ' | 'פנים' | 'גרפיקה' | 'אנימציה' | 'סיור וירטואלי';
 const CATEGORIES: Category[] = ['הכל', 'חוץ', 'פנים', 'גרפיקה', 'אנימציה', 'סיור וירטואלי'];
 
+// Deep links: /#gallery opens straight on the gallery, /#gallery/interior also
+// pre-selects a filter. Slugs stay in English so the URL survives copy-paste.
+const CATEGORY_SLUGS: Record<string, Category> = {
+  all:       'הכל',
+  exterior:  'חוץ',
+  interior:  'פנים',
+  graphics:  'גרפיקה',
+  animation: 'אנימציה',
+  tour:      'סיור וירטואלי',
+};
+
 const CATEGORY_LABELS: Record<Category, { he: string; en: string }> = {
   'הכל':          { he: 'הכל',          en: 'All'          },
   'חוץ':          { he: 'חוץ',          en: 'Exterior'     },
@@ -262,6 +273,35 @@ export default function Projects() {
   const inView   = useInView(headRef, { once: false, margin: '-80px' });
   const { lang } = useLanguage();
   const isHe     = lang === 'he';
+
+  // Land directly on the gallery when the URL carries #gallery / #projects.
+  // The masonry images stream in and keep pushing the section down, so the
+  // native hash jump lands in the wrong place — re-align until it settles,
+  // and back off the moment the visitor scrolls themselves.
+  useEffect(() => {
+    const [name, slug] = window.location.hash.slice(1).toLowerCase().split('/');
+    if (name !== 'gallery' && name !== 'projects') return;
+
+    if (slug && CATEGORY_SLUGS[slug]) setActiveFilter(CATEGORY_SLUGS[slug]);
+
+    // 'instant' overrides the global scroll-behavior: smooth — the page should
+    // already be on the gallery when it appears, not scroll there in front of you.
+    const align = () =>
+      document.getElementById('projects')?.scrollIntoView({ block: 'start', behavior: 'instant' });
+    align();
+    const timers = [100, 400, 900, 1600, 2500].map((ms) => window.setTimeout(align, ms));
+
+    const stop = () => {
+      timers.forEach(clearTimeout);
+      window.removeEventListener('wheel', stop);
+      window.removeEventListener('touchstart', stop);
+      window.removeEventListener('keydown', stop);
+    };
+    window.addEventListener('wheel', stop, { passive: true });
+    window.addEventListener('touchstart', stop, { passive: true });
+    window.addEventListener('keydown', stop);
+    return stop;
+  }, []);
 
   const filtered =
     activeFilter === 'הכל'
