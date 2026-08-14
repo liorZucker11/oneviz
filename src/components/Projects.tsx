@@ -275,32 +275,49 @@ export default function Projects() {
   const isHe     = lang === 'he';
 
   // Land directly on the gallery when the URL carries #gallery / #projects.
-  // The masonry images stream in and keep pushing the section down, so the
-  // native hash jump lands in the wrong place — re-align until it settles,
-  // and back off the moment the visitor scrolls themselves.
+  // Runs on load and on every hash change — editing the hash on an already-open
+  // page fires `hashchange` instead of reloading, so a mount-only read would
+  // leave the gallery stuck on whichever filter it was showing.
   useEffect(() => {
-    const [name, slug] = window.location.hash.slice(1).toLowerCase().split('/');
-    if (name !== 'gallery' && name !== 'projects') return;
+    let timers: number[] = [];
 
-    if (slug && CATEGORY_SLUGS[slug]) setActiveFilter(CATEGORY_SLUGS[slug]);
-
-    // 'instant' overrides the global scroll-behavior: smooth — the page should
-    // already be on the gallery when it appears, not scroll there in front of you.
-    const align = () =>
-      document.getElementById('projects')?.scrollIntoView({ block: 'start', behavior: 'instant' });
-    align();
-    const timers = [100, 400, 900, 1600, 2500].map((ms) => window.setTimeout(align, ms));
-
-    const stop = () => {
+    // Any real scroll input means the visitor took over — stop repositioning them.
+    const stopAligning = () => {
       timers.forEach(clearTimeout);
-      window.removeEventListener('wheel', stop);
-      window.removeEventListener('touchstart', stop);
-      window.removeEventListener('keydown', stop);
+      timers = [];
     };
-    window.addEventListener('wheel', stop, { passive: true });
-    window.addEventListener('touchstart', stop, { passive: true });
-    window.addEventListener('keydown', stop);
-    return stop;
+
+    const applyHash = () => {
+      const [name, slug] = window.location.hash.slice(1).toLowerCase().split('/');
+      if (name !== 'gallery' && name !== 'projects') return;
+
+      setActiveFilter(slug ? CATEGORY_SLUGS[slug] ?? 'הכל' : 'הכל');
+
+      // 'instant' overrides the global scroll-behavior: smooth — the page should
+      // already be on the gallery when it appears, not scroll there in front of you.
+      const align = () =>
+        document.getElementById('projects')?.scrollIntoView({ block: 'start', behavior: 'instant' });
+
+      // The masonry images stream in and keep pushing the section down, so one
+      // scroll lands in the wrong place — re-align until the layout settles.
+      stopAligning();
+      align();
+      timers = [100, 400, 900, 1600, 2500].map((ms) => window.setTimeout(align, ms));
+    };
+
+    applyHash();
+    window.addEventListener('hashchange', applyHash);
+    window.addEventListener('wheel', stopAligning, { passive: true });
+    window.addEventListener('touchstart', stopAligning, { passive: true });
+    window.addEventListener('keydown', stopAligning);
+
+    return () => {
+      stopAligning();
+      window.removeEventListener('hashchange', applyHash);
+      window.removeEventListener('wheel', stopAligning);
+      window.removeEventListener('touchstart', stopAligning);
+      window.removeEventListener('keydown', stopAligning);
+    };
   }, []);
 
   const filtered =
