@@ -15,24 +15,19 @@ type ProjectData = {
   caption?: string;
 };
 
-const OLIN_CAPTION = 'פרויקט נבחר בתקופת עבודתי במשרד אולין';
 const EVA_CAPTION  = 'פרויקט נבחר בתקופת עבודתי במשרד אווה סטודיו';
+const AMRAM_CAPTION = 'עבור הלקוח אמרם אברהם';
 
 const PROJECTS: ProjectData[] = [
+  { id: 145, title: 'Beni Ayash', category: 'חוץ', location: 'ישראל', image: 'https://pub-89c442ddd6cf4d069c34410d67fb2569.r2.dev/Exteriors/Amram_Avrham_1.jpg', caption: AMRAM_CAPTION },
+  { id: 146, title: 'Beni Ayash', category: 'חוץ', location: 'ישראל', image: 'https://pub-89c442ddd6cf4d069c34410d67fb2569.r2.dev/Exteriors/Amram_Avrham_2.jpg', caption: AMRAM_CAPTION },
+  { id: 147, title: 'Beni Ayash', category: 'חוץ', location: 'ישראל', image: 'https://pub-89c442ddd6cf4d069c34410d67fb2569.r2.dev/Exteriors/Amram_Avrham_3.jpg', caption: AMRAM_CAPTION },
+  { id: 148, title: 'Beni Ayash', category: 'חוץ', location: 'ישראל', image: 'https://pub-89c442ddd6cf4d069c34410d67fb2569.r2.dev/Exteriors/Amram_Avrham_4.jpg', caption: AMRAM_CAPTION },
   { id: 1, title: 'AFULA', category: 'חוץ', location: 'ישראל', image: 'https://pub-89c442ddd6cf4d069c34410d67fb2569.r2.dev/Exteriors/AFULA_C4.png' },
   { id: 2, title: 'AFULA', category: 'חוץ', location: 'ישראל', image: 'https://pub-89c442ddd6cf4d069c34410d67fb2569.r2.dev/Exteriors/AFULA_C5.png' },
   { id: 3, title: 'AFULA', category: 'חוץ', location: 'ישראל', image: 'https://pub-89c442ddd6cf4d069c34410d67fb2569.r2.dev/Exteriors/AFULA_C6.png' },
-  { id: 4, title: 'Aura Lod', category: 'חוץ', location: 'ישראל', image: 'https://pub-89c442ddd6cf4d069c34410d67fb2569.r2.dev/Exteriors/AORA_LOD_C1.jpg', caption: OLIN_CAPTION },
-  { id: 5, title: 'Aura Lod', category: 'חוץ', location: 'ישראל', image: 'https://pub-89c442ddd6cf4d069c34410d67fb2569.r2.dev/Exteriors/AORA_LOD_C2.jpg', caption: OLIN_CAPTION },
-  { id: 6, title: 'Aura Lod', category: 'חוץ', location: 'ישראל', image: 'https://pub-89c442ddd6cf4d069c34410d67fb2569.r2.dev/Exteriors/AORA_LOD_C3.jpg', caption: OLIN_CAPTION },
-  { id: 7, title: 'Aura Lod', category: 'חוץ', location: 'ישראל', image: 'https://pub-89c442ddd6cf4d069c34410d67fb2569.r2.dev/Exteriors/AORA_LOD_C4.jpg', caption: OLIN_CAPTION },
   { id: 8, title: 'ATLIT', category: 'חוץ', location: 'ישראל', image: 'https://pub-89c442ddd6cf4d069c34410d67fb2569.r2.dev/Exteriors/ATLIT_C1.jpg', caption: EVA_CAPTION },
   { id: 9, title: 'ATLIT', category: 'חוץ', location: 'ישראל', image: 'https://pub-89c442ddd6cf4d069c34410d67fb2569.r2.dev/Exteriors/ATLIT_C6.jpg', caption: EVA_CAPTION },
-  { id: 10, title: 'BAVLI', category: 'חוץ', location: 'ישראל', image: 'https://pub-89c442ddd6cf4d069c34410d67fb2569.r2.dev/Exteriors/BAVLI_01.jpg', caption: OLIN_CAPTION },
-  { id: 11, title: 'BAVLI', category: 'חוץ', location: 'ישראל', image: 'https://pub-89c442ddd6cf4d069c34410d67fb2569.r2.dev/Exteriors/BAVLI_02.png', caption: OLIN_CAPTION },
-  { id: 12, title: 'BAVLI', category: 'חוץ', location: 'ישראל', image: 'https://pub-89c442ddd6cf4d069c34410d67fb2569.r2.dev/Exteriors/BAVLI_03.jpg', caption: OLIN_CAPTION },
-  { id: 13, title: 'BAVLI', category: 'חוץ', location: 'ישראל', image: 'https://pub-89c442ddd6cf4d069c34410d67fb2569.r2.dev/Exteriors/BAVLI_04.jpg', caption: OLIN_CAPTION },
-  { id: 14, title: 'BAVLI', category: 'חוץ', location: 'ישראל', image: 'https://pub-89c442ddd6cf4d069c34410d67fb2569.r2.dev/Exteriors/BAVLI_05.jpg', caption: OLIN_CAPTION },
   { id: 15, title: 'BER YAKOV', category: 'חוץ', location: 'ישראל', image: 'https://pub-89c442ddd6cf4d069c34410d67fb2569.r2.dev/Exteriors/BER_YAKOV_C1.jpg', caption: EVA_CAPTION },
   { id: 16, title: 'BER YAKOV', category: 'חוץ', location: 'ישראל', image: 'https://pub-89c442ddd6cf4d069c34410d67fb2569.r2.dev/Exteriors/BER_YAKOV_C2.jpg', caption: EVA_CAPTION },
   { id: 17, title: 'BER YAKOV', category: 'חוץ', location: 'ישראל', image: 'https://pub-89c442ddd6cf4d069c34410d67fb2569.r2.dev/Exteriors/BER_YAKOV_C4.png', caption: EVA_CAPTION },
@@ -66,10 +61,6 @@ const PROJECTS: ProjectData[] = [
   { id: 45, title: 'NEVE DAVID', category: 'חוץ', location: 'ישראל', image: 'https://pub-89c442ddd6cf4d069c34410d67fb2569.r2.dev/Exteriors/NEVE_DAVID_C3.jpg', caption: EVA_CAPTION },
   { id: 46, title: 'NEVE DAVID', category: 'חוץ', location: 'ישראל', image: 'https://pub-89c442ddd6cf4d069c34410d67fb2569.r2.dev/Exteriors/NEVE_DAVID_C4.jpg', caption: EVA_CAPTION },
   { id: 47, title: 'ORENARCH', category: 'חוץ', location: 'ישראל', image: 'https://pub-89c442ddd6cf4d069c34410d67fb2569.r2.dev/Exteriors/ORENARCH_C1.png' },
-  { id: 48, title: 'RAMAT EFAL', category: 'חוץ', location: 'ישראל', image: 'https://pub-89c442ddd6cf4d069c34410d67fb2569.r2.dev/Exteriors/RAMAT_EFAL_C1.png', caption: OLIN_CAPTION },
-  { id: 49, title: 'RAMAT EFAL', category: 'חוץ', location: 'ישראל', image: 'https://pub-89c442ddd6cf4d069c34410d67fb2569.r2.dev/Exteriors/RAMAT_EFAL_C2.png', caption: OLIN_CAPTION },
-  { id: 50, title: 'RAMAT EFAL', category: 'חוץ', location: 'ישראל', image: 'https://pub-89c442ddd6cf4d069c34410d67fb2569.r2.dev/Exteriors/RAMAT_EFAL_C3.png', caption: OLIN_CAPTION },
-  { id: 51, title: 'RAMAT EFAL', category: 'חוץ', location: 'ישראל', image: 'https://pub-89c442ddd6cf4d069c34410d67fb2569.r2.dev/Exteriors/RAMAT_EFAL_C4.png', caption: OLIN_CAPTION },
   { id: 52, title: 'RAMAT GAN', category: 'חוץ', location: 'ישראל', image: 'https://pub-89c442ddd6cf4d069c34410d67fb2569.r2.dev/Exteriors/RAMAT_GAN_C2.jpg', caption: EVA_CAPTION },
   { id: 53, title: 'RAMAT GAN', category: 'חוץ', location: 'ישראל', image: 'https://pub-89c442ddd6cf4d069c34410d67fb2569.r2.dev/Exteriors/RAMAT_GAN_C3.png', caption: EVA_CAPTION },
   { id: 54, title: 'RANNA', category: 'חוץ', location: 'ישראל', image: 'https://pub-89c442ddd6cf4d069c34410d67fb2569.r2.dev/Exteriors/RANNA_C1.jpg' },
@@ -249,6 +240,11 @@ const SLIDE_VARIANTS = {
   exit:   (dir: number) => ({ opacity: 0, x: dir * -90, scale: 0.97, filter: 'blur(10px)' }),
 };
 
+type Zoom = { s: number; x: number; y: number };
+const MAX_ZOOM  = 5;
+const ZOOM_STEP = 1.4;   // per +/- press or wheel notch
+const TAP_ZOOM  = 2.5;   // tapping / clicking the image
+
 function Lightbox({
   project,
   showTitle,
@@ -275,22 +271,133 @@ function Lightbox({
 }) {
   const isVideo = project.mediaType === 'video';
   const isTour  = project.mediaType === 'tour';
+  const isImage = !isVideo && !isTour;
+  const hasStrip = !!thumbs && thumbs.length > 1;
+
+  // ── Zoom & pan (images only) ──
+  // The image is scaled inside a frame that clips it to its own bounds, so zooming
+  // in lets you pan around the picture without it spilling over the caption or UI.
+  const [zoom, setZoom]       = useState<Zoom>({ s: 1, x: 0, y: 0 });
+  const [dragging, setDragging] = useState(false);
+  const zoomRef    = useRef(zoom);
+  zoomRef.current  = zoom;
+  const frameRef   = useRef<HTMLDivElement>(null);
+  const pointers   = useRef(new Map<number, { x: number; y: number }>());
+  const pinchStart = useRef<{ dist: number; s: number } | null>(null);
+  const downAt     = useRef<{ x: number; y: number } | null>(null);
+
+  // A new slide always starts un-zoomed.
+  useEffect(() => { setZoom({ s: 1, x: 0, y: 0 }); }, [project.id]);
+
+  const clampZoom = (z: Zoom): Zoom => {
+    const el = frameRef.current;
+    const s = Math.min(MAX_ZOOM, Math.max(1, z.s));
+    if (!el || s === 1) return { s, x: 0, y: 0 };
+    const maxX = (el.clientWidth  * (s - 1)) / 2;
+    const maxY = (el.clientHeight * (s - 1)) / 2;
+    return { s, x: Math.min(maxX, Math.max(-maxX, z.x)), y: Math.min(maxY, Math.max(-maxY, z.y)) };
+  };
+
+  // Scale to `next`, keeping the point (cx, cy) — measured from the frame's centre —
+  // fixed under the cursor/fingers.
+  const zoomTo = (next: number, cx = 0, cy = 0) =>
+    setZoom((z) => {
+      const s = Math.min(MAX_ZOOM, Math.max(1, next));
+      const k = s / z.s;
+      return clampZoom({ s, x: cx - (cx - z.x) * k, y: cy - (cy - z.y) * k });
+    });
+  const zoomToRef = useRef(zoomTo);
+  zoomToRef.current = zoomTo;
+
+  const fromCentre = (e: { clientX: number; clientY: number }) => {
+    const r = frameRef.current!.getBoundingClientRect();
+    return { cx: e.clientX - (r.left + r.width / 2), cy: e.clientY - (r.top + r.height / 2) };
+  };
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape')                    onClose();
       if (e.key === 'ArrowLeft'  && onPrev) onPrev();
       if (e.key === 'ArrowRight' && onNext) onNext();
+      if (!isImage) return;
+      if (e.key === '+' || e.key === '=') zoomToRef.current(zoomRef.current.s * ZOOM_STEP);
+      if (e.key === '-' || e.key === '_') zoomToRef.current(zoomRef.current.s / ZOOM_STEP);
+      if (e.key === '0')                  zoomToRef.current(1);
     };
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, [onClose, onPrev, onNext]);
+  }, [onClose, onPrev, onNext, isImage]);
+
+  // Wheel zoom needs a non-passive listener so the page behind doesn't scroll.
+  useEffect(() => {
+    const el = frameRef.current;
+    if (!el) return;
+    const onWheel = (e: WheelEvent) => {
+      e.preventDefault();
+      const r = el.getBoundingClientRect();
+      zoomToRef.current(
+        zoomRef.current.s * (e.deltaY < 0 ? ZOOM_STEP : 1 / ZOOM_STEP),
+        e.clientX - (r.left + r.width / 2),
+        e.clientY - (r.top + r.height / 2),
+      );
+    };
+    el.addEventListener('wheel', onWheel, { passive: false });
+    return () => el.removeEventListener('wheel', onWheel);
+  }, [project.id, isImage]);
+
+  const onFrameDown = (e: React.PointerEvent<HTMLDivElement>) => {
+    pointers.current.set(e.pointerId, { x: e.clientX, y: e.clientY });
+    downAt.current = { x: e.clientX, y: e.clientY };
+    setDragging(true);
+    if (pointers.current.size === 2) {
+      const [a, b] = [...pointers.current.values()];
+      pinchStart.current = { dist: Math.hypot(a.x - b.x, a.y - b.y), s: zoomRef.current.s };
+    }
+    if (zoomRef.current.s > 1 || pointers.current.size === 2) e.currentTarget.setPointerCapture(e.pointerId);
+  };
+
+  const onFrameMove = (e: React.PointerEvent<HTMLDivElement>) => {
+    const prev = pointers.current.get(e.pointerId);
+    if (!prev) return;
+    pointers.current.set(e.pointerId, { x: e.clientX, y: e.clientY });
+    if (pointers.current.size === 2 && pinchStart.current) {
+      const [a, b] = [...pointers.current.values()];
+      zoomTo((pinchStart.current.s * Math.hypot(a.x - b.x, a.y - b.y)) / pinchStart.current.dist);
+      return;
+    }
+    if (zoomRef.current.s > 1) {
+      const dx = e.clientX - prev.x;
+      const dy = e.clientY - prev.y;
+      setZoom((z) => clampZoom({ ...z, x: z.x + dx, y: z.y + dy }));
+    }
+  };
+
+  const onFrameUp = (e: React.PointerEvent<HTMLDivElement>) => {
+    const wasSingle = pointers.current.size === 1;
+    pointers.current.delete(e.pointerId);
+    if (pointers.current.size < 2) pinchStart.current = null;
+    setDragging(false);
+    // A tap that barely moved toggles zoom: in at the tap point, or back out.
+    const d = downAt.current;
+    if (wasSingle && d && Math.hypot(e.clientX - d.x, e.clientY - d.y) < 6) {
+      if (zoomRef.current.s > 1) zoomTo(1);
+      else { const { cx, cy } = fromCentre(e); zoomTo(TAP_ZOOM, cx, cy); }
+    }
+    downAt.current = null;
+  };
+
+  const zoomed = zoom.s > 1;
+  const zoomBtn = 'w-10 h-10 flex items-center justify-center text-[#c0bcb8] hover:text-[#ffffff] transition-colors duration-200 border border-[#282828] hover:border-[#505050] bg-[#080808]/60 disabled:opacity-30 disabled:hover:text-[#c0bcb8] disabled:hover:border-[#282828]';
 
   const navBtn = 'absolute top-1/2 -translate-y-1/2 z-20 w-10 h-10 flex items-center justify-center text-[#c0bcb8] hover:text-[#ffffff] transition-colors duration-200 border border-[#282828] hover:border-[#505050] bg-[#080808]/80 disabled:opacity-20';
 
   return (
     <motion.div
-      className={`fixed inset-0 z-[60] flex items-center justify-center p-4 lg:p-10 ${thumbs ? 'pb-36 lg:pb-40' : ''}`}
+      className={`fixed inset-0 z-[60] flex items-center justify-center pt-16 ${
+        hasStrip
+          ? 'px-14 pb-32 lg:pl-20 lg:pr-[9.5rem] lg:pb-12'
+          : 'px-14 lg:px-24 pb-4 lg:pb-6'
+      }`}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -315,7 +422,7 @@ function Lightbox({
       <button
         onClick={onNext ?? undefined}
         disabled={!onNext}
-        className={`${navBtn} right-3 lg:right-6`}
+        className={`${navBtn} ${hasStrip ? 'right-3 lg:right-[6.75rem]' : 'right-3 lg:right-6'}`}
         aria-label="הבא"
       >
         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
@@ -329,7 +436,7 @@ function Lightbox({
           variants={SLIDE_VARIANTS}
           className={[
             'relative z-10 w-full flex items-center justify-center',
-            isTour ? 'max-w-6xl h-[85vh]' : 'max-w-5xl max-h-[90vh]',
+            isTour ? 'max-w-6xl h-[85vh]' : 'max-w-full max-h-full',
           ].join(' ')}
           initial="enter"
           animate="center"
@@ -348,13 +455,14 @@ function Lightbox({
               src={project.image}
               controls
               autoPlay
-              className="max-w-full max-h-[90vh] w-auto h-auto"
+              className="max-w-full max-h-[80vh] w-auto h-auto"
             />
           ) : (
-            // Drag/swipe sideways to step through the set (touch-friendly).
+            // Swipe sideways to step through the set — but not while zoomed in,
+            // where dragging pans the image instead.
             <motion.div
-              className="flex flex-col items-center gap-3 cursor-grab active:cursor-grabbing"
-              drag={onPrev || onNext ? 'x' : false}
+              className="flex flex-col items-center gap-3"
+              drag={!zoomed && (onPrev || onNext) ? 'x' : false}
               dragSnapToOrigin
               dragElastic={0.25}
               onDragEnd={(_, info) => {
@@ -362,15 +470,31 @@ function Lightbox({
                 else if (info.offset.x > 80 && onPrev) onPrev();
               }}
             >
-              <img
-                src={project.image}
-                alt=""
-                role="presentation"
-                draggable={false}
-                className={`max-w-full w-auto h-auto object-contain select-none ${
-                  thumbs ? 'max-h-[62vh]' : showTitle || project.caption ? 'max-h-[78vh]' : 'max-h-[90vh]'
-                }`}
-              />
+              <div
+                ref={frameRef}
+                className="relative max-w-full overflow-hidden select-none touch-none"
+                style={{ cursor: zoomed ? (dragging ? 'grabbing' : 'grab') : 'zoom-in' }}
+                onPointerDown={onFrameDown}
+                onPointerMove={onFrameMove}
+                onPointerUp={onFrameUp}
+                onPointerCancel={onFrameUp}
+              >
+                <img
+                  src={project.image}
+                  alt=""
+                  role="presentation"
+                  draggable={false}
+                  className={`block max-w-full w-auto h-auto object-contain select-none will-change-transform ${
+                    hasStrip
+                      ? 'max-h-[58vh] lg:max-h-[77vh]'
+                      : showTitle || project.caption ? 'max-h-[77vh]' : 'max-h-[85vh]'
+                  }`}
+                  style={{
+                    transform: `translate(${zoom.x}px, ${zoom.y}px) scale(${zoom.s})`,
+                    transition: dragging ? 'none' : 'transform 0.25s ease-out',
+                  }}
+                />
+              </div>
               {(showTitle || project.caption) && (
                 <div className="text-center">
                   <p className="font-sans text-[13px] font-bold tracking-wide text-[#c8a96c]">{project.title}</p>
@@ -385,40 +509,57 @@ function Lightbox({
       </AnimatePresence>
 
       {/* ── Filmstrip carousel ── */}
-      {thumbs && thumbs.length > 1 && (
-        <div className="absolute bottom-12 inset-x-0 z-20 flex justify-center px-16">
-          <div className="flex gap-2 max-w-full overflow-x-auto px-1 py-1.5 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
-            {thumbs.map((t, i) => (
-              <button
-                key={t.id}
-                onClick={() => onSelect(i)}
-                aria-label={`${i + 1} / ${thumbs.length}`}
-                className={[
-                  'relative shrink-0 w-20 h-14 lg:w-24 lg:h-16 overflow-hidden border transition-all duration-300',
-                  i === currentIndex
-                    ? 'border-[#c8a96c] opacity-100 scale-105'
-                    : 'border-[#282828] opacity-50 hover:opacity-100 hover:border-[#505050]',
-                ].join(' ')}
-              >
-                <img
-                  src={t.image}
-                  alt=""
-                  role="presentation"
-                  loading="lazy"
-                  decoding="async"
-                  draggable={false}
-                  className="w-full h-full object-cover"
-                />
-              </button>
-            ))}
-          </div>
+      {/* Vertical strip down the right edge on desktop (frees the full height for the
+          image); a horizontal strip along the bottom on phones, where width is scarce. */}
+      {hasStrip && thumbs && (
+        <div className="absolute z-20 flex gap-2 overflow-auto bottom-12 inset-x-0 justify-center px-16 py-1.5 lg:inset-x-auto lg:bottom-auto lg:right-3 lg:top-1/2 lg:-translate-y-1/2 lg:flex-col lg:max-h-[72vh] lg:px-1.5 lg:py-1 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+          {thumbs.map((t, i) => (
+            <button
+              key={t.id}
+              onClick={() => onSelect(i)}
+              aria-label={`${i + 1} / ${thumbs.length}`}
+              className={[
+                'relative shrink-0 w-20 h-14 lg:w-20 lg:h-14 overflow-hidden border transition-all duration-300',
+                i === currentIndex
+                  ? 'border-[#c8a96c] opacity-100 scale-105'
+                  : 'border-[#282828] opacity-50 hover:opacity-100 hover:border-[#505050]',
+              ].join(' ')}
+            >
+              <img
+                src={t.image}
+                alt=""
+                role="presentation"
+                loading="lazy"
+                decoding="async"
+                draggable={false}
+                className="w-full h-full object-cover"
+              />
+            </button>
+          ))}
         </div>
       )}
 
       {/* ── Counter ── */}
       {total > 1 && (
-        <div className="absolute bottom-5 left-1/2 -translate-x-1/2 z-20 font-sans text-[11px] tracking-widest text-[#c0bcb8]">
+        <div dir="ltr" className="absolute bottom-5 left-1/2 -translate-x-1/2 z-20 font-sans text-[11px] tracking-widest text-[#c0bcb8]">
           {currentIndex + 1} / {total}
+        </div>
+      )}
+
+      {/* ── Zoom controls ── */}
+      {isImage && (
+        <div className="absolute top-5 right-[4.25rem] z-20 flex gap-2">
+          {zoomed && (
+            <button onClick={() => zoomTo(1)} className={`${zoomBtn} font-sans text-[11px] tracking-wide`} aria-label="איפוס זום">
+              {Math.round(zoom.s * 100)}%
+            </button>
+          )}
+          <button onClick={() => zoomTo(zoom.s / ZOOM_STEP)} disabled={!zoomed} className={zoomBtn} aria-label="הקטן">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <button onClick={() => zoomTo(zoom.s * ZOOM_STEP)} disabled={zoom.s >= MAX_ZOOM} className={zoomBtn} aria-label="הגדל">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
         </div>
       )}
 
